@@ -8,7 +8,7 @@
       name="description"
       content="Контактная информация учебного интернет-магазина."
     />
-    <title>Контакты — Учебный интернет-магазин</title>
+    <title>Красная бейсболка — Учебный интернет-магазин</title>
     <link rel="stylesheet" href="css/style.css" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Учебный интернет-магазин" />
@@ -40,35 +40,58 @@
     </header>
 
     <main class="main">
+      <nav class="breadcrumbs" aria-label="Хлебные крошки">
+        <a href="index.html">Главная</a>
+        <span>Красная бейсболка</span>
+      </nav>
       <section class="product-page">
         <div class="product-page__inner">
           <img
-            src="images/tshirt.jpg"
-            alt="Розовая футболка"
+            src="images/cap.jpg"
+            alt="Красная бейсболка"
             class="product-page__image"
           />
 
           <div class="product-page__info">
-            <h1 class="product-page__title">Розовая футболка</h1>
-            <p class="product-page__price">1400 руб.</p>
+            <h1 class="product-page__title">Красная бейсболка</h1>
+            <p class="product-page__price">400 руб.</p>
 
             <p class="product-page__desc">
-              Мягкая футболка нежного розового цвета из 100% хлопка.
-              Универсальный крой, дышащая ткань и приятный оттенок — подойдёт и
-              под джинсы, и под юбку.
+              Классическая бейсболка насыщенного красного цвета из плотного
+              хлопка. Регулируемый ремешок сзади позволяет подогнать размер под
+              любую голову, а изогнутый козырёк защищает от солнца. Отличный
+              вариант и для прогулок, и для спорта.
             </p>
 
             <h2 class="product-page__subtitle">Характеристики</h2>
-            <ul class="product-page__list">
-              <li>Состав: 95% хлопок, 5% эластан</li>
-              <li>Цвет: пудрово-розовый</li>
-              <li>Размеры: XS – XL</li>
-              <li>Уход: стирка при 30°C</li>
-            </ul>
+            <table class="product-page__specs">
+              <tbody>
+                <tr>
+                  <th>Состав</th>
+                  <td>100% хлопок</td>
+                </tr>
+                <tr>
+                  <th>Цвет</th>
+                  <td>красный</td>
+                </tr>
+                <tr>
+                  <th>Размер</th>
+                  <td>регулируемый (56 – 60 см)</td>
+                </tr>
+                <tr>
+                  <th>Козырёк</th>
+                  <td>изогнутый</td>
+                </tr>
+                <tr>
+                  <th>Уход</th>
+                  <td>ручная стирка при 30°C</td>
+                </tr>
+              </tbody>
+            </table>
             <button
-              class="button product-card__button"
+              class="button product-page__info"
               type="button"
-              data-product="Розовая футболка"
+              data-product="Красная бейсболка"
             >
               Заказать
             </button>

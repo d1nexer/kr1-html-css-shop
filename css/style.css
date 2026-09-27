@@ -95,6 +95,10 @@ a:focus-visible {
   cursor: pointer;
 }
 
+.product-page__info .button {
+  margin-top: 8px;    /* страховка сверху у кнопки */
+}
+
 .button:hover, .a-button:hover {
   background-color: var(--color-primary-dark);
 }
@@ -339,3 +343,93 @@ a:focus-visible {
   font: inherit;
 }
 
+.product-page__inner {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.product-page__image {
+  display: block;
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+  background-color: #606060;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.9);
+  flex-shrink: 0;
+}
+
+.product-page__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.product-page__title {
+  margin: 0 0 12px;
+  font-size: 28px;
+  line-height: 1.2;
+}
+
+.product-page__price {
+  margin: 0 0 20px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.product-page__desc {
+  margin: 0 0 24px;
+  line-height: 1.6;
+}
+
+.product-page__subtitle {
+  margin: 0 0 12px;
+  font-size: 18px;
+}
+
+.product-page__list {
+  margin: 0 0 28px;
+  padding-left: 20px;
+  line-height: 1.8;
+}
+
+product-page__specs {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 32 32px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.product-page__specs th,
+.product-page__specs td {
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 1px solid #e5e5e5;
+  vertical-align: top;
+}
+
+.product-page__specs th {
+  width: 40%;
+  font-weight: 600;
+  color: #555;
+  background-color: #fafafa;
+}
+
+.product-page__specs td {
+  color: #222;
+}
+
+.product-page__specs tr:first-child th,
+.product-page__specs tr:first-child td {
+  border-top: 1px solid #e5e5e5;
+}
+
+.product-page__specs tr:hover th,
+.product-page__specs tr:hover td {
+  background-color: #f5f5f5;
+}
