@@ -32,6 +32,7 @@
   /* Размеры */
   --container-width: 1100px;
 }
+
 /* ===============================
    2. Базовые стили
    =============================== */
@@ -43,7 +44,6 @@
 html {
   scroll-behavior: smooth;
 }
-
 
 body {
   margin: 0;
@@ -84,7 +84,8 @@ a:focus-visible {
   outline-offset: 3px;
 }
 
-.button, .a-button {
+.button,
+.a-button {
   display: inline-block;
   padding: var(--space-sm) var(--space-md);
   color: var(--color-white);
@@ -95,20 +96,19 @@ a:focus-visible {
   cursor: pointer;
 }
 
-.product-page__info .button {
-  margin-top: 8px;    /* страховка сверху у кнопки */
-}
-
-.button:hover, .a-button:hover {
+.button:hover,
+.a-button:hover {
   background-color: var(--color-primary-dark);
 }
 
-.button:focus-visible, .a-button:focus-visible {
+.button:focus-visible,
+.a-button:focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 3px;
 }
 
-.button:disabled, .a-button:disabled {
+.button:disabled,
+.a-button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }
@@ -134,17 +134,7 @@ a:focus-visible {
   margin-top: 0;
 }
 
-.product-card {
-  margin-bottom: var(--space-md);
-  padding: var(--space-md);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  background-color: var(--color-bg);
-}
-
-.product-card:hover {
-  border-color: var(--color-primary);
-}
+/* --- Карточка товара --- */
 
 .product-card {
   display: flex;
@@ -157,18 +147,21 @@ a:focus-visible {
   background-color: var(--color-bg);
 }
 
-.product-card .button, .a-button {
+.product-card:hover {
+  border-color: var(--color-primary);
+}
+
+.product-card .button,
+.product-card .a-button {
   margin-top: auto;
   align-self: flex-start;
 }
-
 
 .products-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-lg);
 }
-
 
 .aside-info {
   max-width: var(--container-width);
@@ -248,6 +241,8 @@ a:focus-visible {
   background-color: var(--color-success-bg);
 }
 
+/* --- Хлебные крошки --- */
+
 .breadcrumbs {
   max-width: var(--container-width);
   margin: 0 auto var(--space-md);
@@ -268,6 +263,10 @@ a:focus-visible {
   outline: 2px dashed var(--color-primary);
   outline-offset: 4px;
 }
+
+/* ===============================
+   6. Навигация
+   =============================== */
 
 .site-nav__list {
   display: flex;
@@ -292,6 +291,10 @@ a:focus-visible {
   color: var(--color-white);
   background-color: var(--color-primary);
 }
+
+/* ===============================
+   7. Каталог
+   =============================== */
 
 .catalog-layout {
   max-width: var(--container-width);
@@ -343,9 +346,13 @@ a:focus-visible {
   font: inherit;
 }
 
+/* ===============================
+   8. Страница товара
+   =============================== */
+
 .product-page__inner {
   display: flex;
-  gap: 32px;
+  gap: var(--space-xl);
   align-items: flex-start;
   max-width: 1000px;
   margin: 0 auto;
@@ -358,9 +365,9 @@ a:focus-visible {
   height: 400px;
   object-fit: cover;
   object-position: center;
-  border-radius: 12px;
-  background-color: #606060;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.9);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-surface);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   flex-shrink: 0;
 }
 
@@ -397,10 +404,12 @@ a:focus-visible {
   line-height: 1.8;
 }
 
-product-page__specs {
+/* --- Таблица характеристик --- */
+
+.product-page__specs {
   width: 100%;
   border-collapse: collapse;
-  margin: 0 32 32px;
+  margin: 0 0 32px;
   font-size: 15px;
   line-height: 1.5;
 }
@@ -433,3 +442,120 @@ product-page__specs {
 .product-page__specs tr:hover td {
   background-color: #f5f5f5;
 }
+
+/* Отступ у кнопки "Заказать" на странице товара */
+.product-page__info .button {
+  margin-top: 8px;
+}
+
+/* --- Картинка в карточке товара --- */
+.product-card__image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface);
+}
+
+/* --- Текстовые элементы карточки --- */
+.product-card__title {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.product-card__desc {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.product-card__price {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+/* ===============================
+   10. Страница оформления заказа
+   =============================== */
+
+.order-page {
+  max-width: 640px;
+  margin: 0 auto var(--space-xl);
+}
+
+.order-page__title {
+  margin: 0 0 var(--space-sm);
+  font-size: 28px;
+}
+
+.order-page__lead {
+  margin: 0 0 var(--space-lg);
+  color: var(--color-muted);
+}
+
+/* Форма на странице — карточка, а не модалка */
+.order-form--page {
+  padding: var(--space-lg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-bg);
+}
+
+/* «Призрачная» кнопка (если ещё не добавил ранее) */
+.button--ghost {
+  color: var(--color-primary);
+  background-color: transparent;
+  border: 1px solid var(--color-primary);
+}
+
+.button--ghost:hover {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+}
+
+/* Кнопки формы: на десктопе справа, на телефоне — на всю ширину */
+.order-form--page .form-actions {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+/* ===============================
+   11. Страница успешного заказа
+   =============================== */
+
+.order-success {
+  max-width: 640px;
+  margin: 0 auto var(--space-xl);
+  padding: var(--space-xl) var(--space-lg);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-success);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-success-bg);
+  text-align: center;
+}
+
+.order-success__title {
+  margin: 0 0 var(--space-md);
+  font-size: 26px;
+  color: var(--color-success);
+}
+
+.order-success__text {
+  margin: 0 0 var(--space-lg);
+  color: var(--color-text);
+}
+
+.order-success__actions {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
