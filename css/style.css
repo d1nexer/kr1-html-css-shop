@@ -32,6 +32,7 @@
   /* Размеры */
   --container-width: 1100px;
 }
+
 /* ===============================
    2. Базовые стили
    =============================== */
@@ -43,7 +44,6 @@
 html {
   scroll-behavior: smooth;
 }
-
 
 body {
   margin: 0;
@@ -84,7 +84,8 @@ a:focus-visible {
   outline-offset: 3px;
 }
 
-.button {
+.button,
+.a-button {
   display: inline-block;
   padding: var(--space-sm) var(--space-md);
   color: var(--color-white);
@@ -95,16 +96,19 @@ a:focus-visible {
   cursor: pointer;
 }
 
-.button:hover {
+.button:hover,
+.a-button:hover {
   background-color: var(--color-primary-dark);
 }
 
-.button:focus-visible {
+.button:focus-visible,
+.a-button:focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 3px;
 }
 
-.button:disabled {
+.button:disabled,
+.a-button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }
@@ -130,17 +134,7 @@ a:focus-visible {
   margin-top: 0;
 }
 
-.product-card {
-  margin-bottom: var(--space-md);
-  padding: var(--space-md);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  background-color: var(--color-bg);
-}
-
-.product-card:hover {
-  border-color: var(--color-primary);
-}
+/* --- Карточка товара --- */
 
 .product-card {
   display: flex;
@@ -153,11 +147,15 @@ a:focus-visible {
   background-color: var(--color-bg);
 }
 
-.product-card .button {
+.product-card:hover {
+  border-color: var(--color-primary);
+}
+
+.product-card .button,
+.product-card .a-button {
   margin-top: auto;
   align-self: flex-start;
 }
-
 
 .products-grid {
   display: grid;
@@ -165,13 +163,75 @@ a:focus-visible {
   gap: var(--space-lg);
 }
 
-
 .aside-info {
   max-width: var(--container-width);
   margin: 0 auto var(--space-xl);
   padding: var(--space-md);
   border-left: 4px solid var(--color-primary);
   background-color: var(--color-surface);
+}
+/* карта на странице контактов */
+.contacts-map {
+  margin-top: var(--space-xl);
+}
+
+.contacts-map__frame {
+  display: block;
+  width: 100%;
+  height: 400px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.section__title {
+  margin: 0 0 var(--space-lg);
+  font-size: 24px;
+}
+/*Секция преимцуществ на index. html */
+.advantages__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+.advantage-card {
+  padding: var(--space-lg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg);
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.advantage-card:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.advantage-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: var(--space-md);
+  font-size: 24px;
+  border-radius: 50%;
+  background-color: var(--color-surface-accent);
+}
+
+.advantage-card__title {
+  margin: 0 0 var(--space-sm);
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.advantage-card__text {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 15px;
+  line-height: 1.5;
 }
 
 /* ===============================
@@ -244,6 +304,8 @@ a:focus-visible {
   background-color: var(--color-success-bg);
 }
 
+/* --- Хлебные крошки --- */
+
 .breadcrumbs {
   max-width: var(--container-width);
   margin: 0 auto var(--space-md);
@@ -264,6 +326,10 @@ a:focus-visible {
   outline: 2px dashed var(--color-primary);
   outline-offset: 4px;
 }
+
+/* ===============================
+   6. Навигация
+   =============================== */
 
 .site-nav__list {
   display: flex;
@@ -288,6 +354,10 @@ a:focus-visible {
   color: var(--color-white);
   background-color: var(--color-primary);
 }
+
+/* ===============================
+   7. Каталог
+   =============================== */
 
 .catalog-layout {
   max-width: var(--container-width);
@@ -339,3 +409,213 @@ a:focus-visible {
   font: inherit;
 }
 
+/* ===============================
+   8. Страница товара
+   =============================== */
+
+.product-page__inner {
+  display: flex;
+  gap: var(--space-xl);
+  align-items: flex-start;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.product-page__image {
+  display: block;
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-surface);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  flex-shrink: 0;
+}
+
+.product-page__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.product-page__title {
+  margin: 0 0 12px;
+  font-size: 28px;
+  line-height: 1.2;
+}
+
+.product-page__price {
+  margin: 0 0 20px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.product-page__desc {
+  margin: 0 0 24px;
+  line-height: 1.6;
+}
+
+.product-page__subtitle {
+  margin: 0 0 12px;
+  font-size: 18px;
+}
+
+.product-page__list {
+  margin: 0 0 28px;
+  padding-left: 20px;
+  line-height: 1.8;
+}
+
+/* --- Таблица характеристик --- */
+
+.product-page__specs {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 32px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.product-page__specs th,
+.product-page__specs td {
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 1px solid #e5e5e5;
+  vertical-align: top;
+}
+
+.product-page__specs th {
+  width: 40%;
+  font-weight: 600;
+  color: #555;
+  background-color: #fafafa;
+}
+
+.product-page__specs td {
+  color: #222;
+}
+
+.product-page__specs tr:first-child th,
+.product-page__specs tr:first-child td {
+  border-top: 1px solid #e5e5e5;
+}
+
+.product-page__specs tr:hover th,
+.product-page__specs tr:hover td {
+  background-color: #f5f5f5;
+}
+
+/* Отступ у кнопки "Заказать" на странице товара */
+.product-page__info .button {
+  margin-top: 8px;
+}
+
+/* --- Картинка в карточке товара --- */
+.product-card__image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface);
+}
+
+/* --- Текстовые элементы карточки --- */
+.product-card__title {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.product-card__desc {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.product-card__price {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+/* ===============================
+   10. Страница оформления заказа
+   =============================== */
+
+.order-page {
+  max-width: 640px;
+  margin: 0 auto var(--space-xl);
+}
+
+.order-page__title {
+  margin: 0 0 var(--space-sm);
+  font-size: 28px;
+}
+
+.order-page__lead {
+  margin: 0 0 var(--space-lg);
+  color: var(--color-muted);
+}
+
+.order-form--page {
+  padding: var(--space-lg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-bg);
+}
+
+/* «Призрачная» кнопка */
+.button--ghost {
+  color: var(--color-primary);
+  background-color: transparent;
+  border: 1px solid var(--color-primary);
+}
+
+.button--ghost:hover {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+}
+
+.order-form--page .form-actions {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+/* ===============================
+   11. Страница успешного заказа
+   =============================== */
+
+.order-success {
+  max-width: 640px;
+  margin: 0 auto var(--space-xl);
+  padding: var(--space-xl) var(--space-lg);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-success);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-success-bg);
+  text-align: center;
+}
+
+.order-success__title {
+  margin: 0 0 var(--space-md);
+  font-size: 26px;
+  color: var(--color-success);
+}
+
+.order-success__text {
+  margin: 0 0 var(--space-lg);
+  color: var(--color-text);
+}
+
+.order-success__actions {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
